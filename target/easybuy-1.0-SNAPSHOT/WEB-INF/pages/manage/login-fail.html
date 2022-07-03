@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>易买网 - 首页</title>
+<link type="text/css" rel="stylesheet" href="/easybuy/css/style.css" />
+<script type="text/javascript" charset="utf-8" src="/easybuy/scripts/function.js"></script>
+</head>
+<body>
+<div id="header" class="wrap">
+	<div id="logo"><img src="/easybuy/images/logo.gif" /></div>
+	<div class="help"><a th:href="@{/topageindex}">返回前台页面</a></div>
+	<div class="navbar">
+		<ul class="clearfix">
+			<li class="current"><a th:href="@{/tomanage}">首页</a></li>
+			<li><a th:href="@{/user}">用户</a></li>
+			<li><a th:href="@{/product}">商品</a></li>
+			<li><a th:href="@{/order}">订单</a></li>
+			<li><a th:href="@{/manageguestbook}">留言</a></li>
+			<li><a th:href="@{/news}">新闻</a></li>
+		</ul>
+	</div>
+</div>
+<div id="childNav">
+	<div class="welcome wrap">
+		管理员<span th:text="${session.user}"></span>您好，今天是<span th:text="${#dates.format(#dates.createNow(), 'yyyy-MM-dd HH:mm')}"></span>，欢迎回到后台管理。
+	</div>
+</div>
+<div id="position" class="wrap">
+	您现在的位置：<a th:href="@{/tomanage}">易买网</a> &gt; 登录失败
+</div>
+<div id="register" class="wrap">
+	<div class="shadow">
+		<em class="corner lb"></em>
+		<em class="corner rt"></em>
+		<div class="box">
+			<h1>欢迎回到易买网</h1>
+			<ul class="steps clearfix">
+				<li class="finished"><em></em>填写登录信息</li>
+				<li class="last-current"><em></em>登录失败</li>
+			</ul>
+			<div class="msg">
+				<p>账号或密码错误：登录失败！</p>
+				<p>正在返回登录页面...</p>
+				<script type="text/javascript" >
+					var urlf=/*[[@{/tomanagelogin}]]*/
+					setTimeout("location.href=urlf", 3000);
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	Copyright &copy; 2010  All Rights Reserved. 京ICP证1000001号
+</div>
+</body>
+</html>
